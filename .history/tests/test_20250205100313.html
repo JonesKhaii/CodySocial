@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Friend Finder</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <style>
+            body {
+                background-color: #f4f4f4;
+                font-family: Arial, sans-serif;
+            }
+            .navbar-brand {
+                font-weight: bold;
+                color: #1877f2;
+            }
+            .post {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+            }
+            .post-header,
+            .comment-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .post-header-left,
+            .comment-header-left {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .post-header-left img,
+            .comment-header-left img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+            .post-header-right,
+            .comment-header-right {
+                display: flex;
+                gap: 10px;
+            }
+            .post-content {
+                margin-top: 10px;
+                line-height: 1.5;
+            }
+            .actions {
+                display: flex;
+                gap: 15px;
+                margin-top: 10px;
+                align-items: center;
+            }
+            .actions button {
+                border: none;
+                background: none;
+                cursor: pointer;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            .like {
+                color: green;
+            }
+            .dislike {
+                color: red;
+            }
+            .comment-section {
+                margin-top: 15px;
+                padding-top: 10px;
+                border-top: 1px solid #ddd;
+            }
+            .comment {
+                margin-top: 10px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .comment-input {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-header-left">
+                        <img src="https://via.placeholder.com/40" />
+                        <div>
+                            <h4 style="color: #1877f2; margin: 0">
+                                Dương Khải
+                            </h4>
+                            <p style="color: gray; font-size: 12px; margin: 0">
+                                1 phút trước
+                            </p>
+                        </div>
+                    </div>
+                    <div class="post-header-right">
+                        <button class="like">
+                            <i class="fas fa-thumbs-up"></i> 12
+                        </button>
+                        <button class="dislike">
+                            <i class="fas fa-thumbs-down"></i> 2
+                        </button>
+                    </div>
+                </div>
+                <p class="post-title">
+                    Tại sao chúng ta cần phải uống đủ 2 lít nước mỗi ngày?
+                </p>
+                <p class="post-content">
+                    Cơ thể cần nước để duy trì sự sống và hỗ trợ các chức năng
+                    quan trọng. Hãy xem qua những lợi ích của việc uống nước
+                    nhé.
+                </p>
+
+                <div class="comment-section">
+                    <div class="comment">
+                        <div class="comment-header">
+                            <div class="comment-header-left">
+                                <img src="https://via.placeholder.com/30" />
+                                <div>
+                                    <h5 style="color: #1877f2; margin: 0">
+                                        Phương Tuấn
+                                    </h5>
+                                    <p
+                                        style="
+                                            color: gray;
+                                            font-size: 12px;
+                                            margin: 0;
+                                        "
+                                    >
+                                        30 giây trước
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="comment-header-right">
+                                <button class="like">
+                                    <i class="fas fa-thumbs-up"></i> 5
+                                </button>
+                                <button class="dislike">
+                                    <i class="fas fa-thumbs-down"></i> 1
+                                </button>
+                            </div>
+                        </div>
+                        <p style="margin: 10px 0; font-size: 14px">
+                            Quá tuyệt vời bác sĩ. Nhưng mà uống nhiều thế em hay
+                            bị đi tiểu.
+                        </p>
+                    </div>
+                    <input
+                        type="text"
+                        class="comment-input"
+                        placeholder="Viết bình luận..."
+                    />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

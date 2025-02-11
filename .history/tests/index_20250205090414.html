@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cody Community</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background: #f4f4f4;
+            }
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: white;
+                padding: 15px 20px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            nav a {
+                margin: 0 10px;
+                text-decoration: none;
+                color: black;
+            }
+            .container {
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+            .sidebar,
+            .right-sidebar {
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            main {
+                background: white;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            }
+            .post-box input {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+            }
+            .post-box button {
+                margin-top: 10px;
+                padding: 10px 15px;
+                background: blue;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+            .post {
+                margin-top: 20px;
+                padding: 15px;
+                border-bottom: 1px solid #ccc;
+            }
+            .post-header {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .post-title {
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            .actions button {
+                border: none;
+                background: none;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            @media (max-width: 1024px) {
+                .container {
+                    grid-template-columns: 1fr;
+                }
+            }
+            @media (max-width: 768px) {
+                header {
+                    flex-direction: column;
+                    align-items: center;
+                }
+                nav {
+                    justify-content: center;
+                }
+                .container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Cody community</h1>
+            <input type="text" placeholder="Nhập để tìm kiếm..." />
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Doctors</a>
+                <a href="#">Q&A</a>
+                <a href="#">Appointment</a>
+                <a href="#">Articles</a>
+            </nav>
+        </header>
+
+        <div class="container">
+            <aside class="sidebar">
+                <h2>Chuyên mục phổ biến</h2>
+                <ul>
+                    <li>Da liễu</li>
+                    <li>Tim mạch</li>
+                    <li>Sức khỏe người cao tuổi</li>
+                    <li>Đường huyết</li>
+                </ul>
+            </aside>
+
+            <main>
+                <div class="post-box">
+                    <h3>Chia sẻ suy nghĩ của bạn</h3>
+                    <input type="text" placeholder="Viết gì đó..." />
+                    <button>Chia sẻ</button>
+                </div>
+
+                <div class="post">
+                    <div class="post-header">
+                        <span class="avatar"></span>
+                        <div>
+                            <h4>Dương Khải</h4>
+                            <p>1 phút trước</p>
+                        </div>
+                    </div>
+                    <p class="post-title">
+                        Tại sao chúng ta cần phải uống đủ 2 lít nước mỗi ngày?
+                    </p>
+                    <p class="post-content">
+                        Cơ thể cần nước để duy trì sự sống và hỗ trợ các chức
+                        năng quan trọng. Hãy xem qua những lợi ích của việc uống
+                        nước nhé.
+                    </p>
+                    <div class="actions">
+                        <button class="like">👍 12</button>
+                        <button class="dislike">👎 2</button>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="right-sidebar">
+                <div class="doctors">
+                    <h2>Bác sĩ hàng đầu</h2>
+                    <div class="doctor">
+                        <span class="avatar"></span>
+                        <div>
+                            <p class="doctor-name">Bác sĩ Dương Quý</p>
+                            <p class="doctor-specialty">Chuyên gia Tim mạch</p>
+                            <button>Xem hồ sơ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="appointments">
+                    <h2>Lịch khám sắp tới</h2>
+                    <p>Tuyệt vời, hiện tại bạn không có lịch khám nào.</p>
+                </div>
+            </aside>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

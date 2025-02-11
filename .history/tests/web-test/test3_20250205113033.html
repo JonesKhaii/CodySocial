@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Health Connect | Trang Chủ</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/ionicons.min.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link href="css/emoji.css" rel="stylesheet" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header id="header">
+            <nav class="navbar navbar-default navbar-fixed-top menu">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button
+                            type="button"
+                            class="navbar-toggle collapsed"
+                            data-toggle="collapse"
+                            data-target="#navbarNav"
+                        >
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html"
+                            ><img src="images/logo-medical.png" alt="logo"
+                        /></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="nav navbar-nav navbar-right main-menu">
+                            <li><a href="#">Trang Chủ</a></li>
+                            <li><a href="doctors.html">Bác Sĩ</a></li>
+                            <li><a href="newsfeed.html">Tư Vấn</a></li>
+                            <li><a href="appointment.html">Lịch Khám</a></li>
+                            <li><a href="articles.html">Bài Viết</a></li>
+                            <li><a href="profile.html">Hồ Sơ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Left Sidebar -->
+                <div class="col-md-3 static">
+                    <div class="profile-card text-center">
+                        <img
+                            src="images/users/doctor1.jpg"
+                            alt="user"
+                            class="profile-photo"
+                        />
+                        <h5>
+                            <a href="timeline.html" class="text-white"
+                                >Bác Sĩ Nguyễn Văn A</a
+                            >
+                        </h5>
+                        <a href="#" class="text-white"
+                            ><i class="ion-person-add"></i> 1,299 bệnh nhân</a
+                        >
+                    </div>
+                    <ul class="nav-news-feed">
+                        <li>
+                            <i class="ion-ios-paper"></i>
+                            <div><a href="newsfeed.html">Tư Vấn Y Khoa</a></div>
+                        </li>
+                        <li>
+                            <i class="ion-ios-people"></i>
+                            <div>
+                                <a href="newsfeed-people-nearby.html"
+                                    >Bệnh Nhân Gần Đây</a
+                                >
+                            </div>
+                        </li>
+                        <li>
+                            <i class="ion-chatboxes"></i>
+                            <div>
+                                <a href="newsfeed-messages.html">Tin Nhắn</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Main Feed -->
+                <div class="col-md-6">
+                    <div class="post-box">
+                        <h5>Chia Sẻ Kiến Thức Y Tế</h5>
+                        <textarea
+                            class="form-control"
+                            placeholder="Viết gì đó về sức khỏe..."
+                            rows="3"
+                        ></textarea>
+                        <div class="mt-2">
+                            <input
+                                type="file"
+                                class="form-control mb-2"
+                                accept="image/*,video/*"
+                            />
+                        </div>
+                        <button class="btn btn-success mt-2 w-100">Đăng</button>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="col-md-3 static">
+                    <div class="suggestions" id="sticky-sidebar">
+                        <h4 class="grey">Bác Sĩ Hàng Đầu</h4>
+                        <div class="follow-user">
+                            <img
+                                src="images/users/doctor2.jpg"
+                                alt=""
+                                class="profile-photo-sm pull-left"
+                            />
+                            <div>
+                                <h5><a href="#">Bác sĩ Trần Bảo</a></h5>
+                                <a href="#" class="text-green">Xem hồ sơ</a>
+                            </div>
+                        </div>
+                        <div class="follow-user">
+                            <img
+                                src="images/users/doctor3.jpg"
+                                alt=""
+                                class="profile-photo-sm pull-left"
+                            />
+                            <div>
+                                <h5><a href="#">Bác sĩ Lê Thu</a></h5>
+                                <a href="#" class="text-green">Xem hồ sơ</a>
+                            </div>
+                        </div>
+                        <div class="follow-user">
+                            <img
+                                src="images/users/doctor4.jpg"
+                                alt=""
+                                class="profile-photo-sm pull-left"
+                            />
+                            <div>
+                                <h5><a href="#">Bác sĩ Hoàng Nam</a></h5>
+                                <a href="#" class="text-green">Xem hồ sơ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="suggestions">
+                        <h4 class="grey">Lịch Khám Sắp Tới</h4>
+                        <p class="upcoming-appointments">
+                            Bạn chưa có lịch khám nào.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3">
+                        <a href="#"
+                            ><img
+                                src="images/logo-medical.png"
+                                alt=""
+                                class="footer-logo"
+                        /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <h5>Hỗ Trợ</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">Liên Hệ</a></li>
+                            <li><a href="#">Chính Sách Bảo Mật</a></li>
+                            <li><a href="#">Điều Khoản</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 col-sm-3">
+                        <h5>Kết Nối Với Chúng Tôi</h5>
+                        <ul class="social-icons">
+                            <li>
+                                <a href="#"
+                                    ><i class="ion-social-facebook"></i
+                                ></a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><i class="ion-social-twitter"></i
+                                ></a>
+                            </li>
+                            <li>
+                                <a href="#"
+                                    ><i class="ion-social-linkedin"></i
+                                ></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

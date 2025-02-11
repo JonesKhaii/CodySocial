@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Friend Finder</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <style>
+            body {
+                background-color: #f4f4f4;
+                font-family: Arial, sans-serif;
+            }
+            .navbar-brand {
+                font-weight: bold;
+                color: #1877f2;
+            }
+            .sidebar-card {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+            }
+            .sidebar-card h5 {
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            .doctor-card {
+                display: flex;
+                align-items: center;
+                background: #f8f9fa;
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                border: 1px solid #ddd;
+                transition: all 0.3s ease-in-out;
+            }
+            .doctor-card:hover {
+                transform: scale(1.03);
+                box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+            }
+            .doctor-card img {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                margin-right: 12px;
+            }
+            .doctor-info {
+                flex-grow: 1;
+            }
+            .doctor-card .btn {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+            .upcoming-appointments {
+                text-align: center;
+                font-size: 14px;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="sidebar-card">
+                        <h5>Bác sĩ hàng đầu</h5>
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/55" />
+                            <div class="doctor-info">
+                                <strong>Bác sĩ Dương Khải</strong>
+                                <p
+                                    style="
+                                        margin: 0;
+                                        font-size: 13px;
+                                        color: #555;
+                                    "
+                                >
+                                    Consultant - Bệnh viện Bạch Mai
+                                </p>
+                                <small>⭐ 4.2 (78 reviews)</small>
+                            </div>
+                            <button class="btn btn-primary">Xem hồ sơ</button>
+                        </div>
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/55" />
+                            <div class="doctor-info">
+                                <strong>Bác sĩ Dương Khải</strong>
+                                <p
+                                    style="
+                                        margin: 0;
+                                        font-size: 13px;
+                                        color: #555;
+                                    "
+                                >
+                                    Consultant - Bệnh viện Bạch Mai
+                                </p>
+                                <small>⭐ 4.2 (78 reviews)</small>
+                            </div>
+                            <button class="btn btn-primary">Xem hồ sơ</button>
+                        </div>
+                        <div class="doctor-card">
+                            <img src="https://via.placeholder.com/55" />
+                            <div class="doctor-info">
+                                <strong>Bác sĩ Dương Khải</strong>
+                                <p
+                                    style="
+                                        margin: 0;
+                                        font-size: 13px;
+                                        color: #555;
+                                    "
+                                >
+                                    Consultant - Bệnh viện Bạch Mai
+                                </p>
+                                <small>⭐ 4.2 (78 reviews)</small>
+                            </div>
+                            <button class="btn btn-primary">Xem hồ sơ</button>
+                        </div>
+                    </div>
+                    <div class="sidebar-card">
+                        <h5>Lịch khám sắp tới</h5>
+                        <p class="upcoming-appointments">
+                            Tuyệt vời, hiện tại bạn không có lịch khám nào.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

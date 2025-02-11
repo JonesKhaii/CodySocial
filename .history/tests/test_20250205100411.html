@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Friend Finder</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <style>
+            /*==================================================
+  Post Contents CSS
+  ==================================================*/
+
+            .post-content {
+                background: #f8f8f8;
+                border-radius: 4px;
+                width: 100%;
+                border: 1px solid #f1f2f2;
+                margin-bottom: 20px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .post-content img.post-image,
+            video.post-video,
+            .google-maps {
+                width: 100%;
+                height: auto;
+            }
+
+            .post-content .google-maps .map {
+                height: 300px;
+            }
+
+            .post-content .post-container {
+                padding: 20px;
+            }
+
+            .post-content .post-container .post-detail {
+                margin-left: 65px;
+                position: relative;
+            }
+
+            .post-content .post-container .post-detail .post-text {
+                line-height: 24px;
+                margin: 0;
+            }
+
+            .post-content .post-container .post-detail .reaction {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .post-content .post-container .post-detail .post-comment {
+                display: inline-flex;
+                margin: 10px auto;
+                width: 100%;
+            }
+
+            .post-content
+                .post-container
+                .post-detail
+                .post-comment
+                img.profile-photo-sm {
+                margin-right: 10px;
+            }
+
+            .post-content
+                .post-container
+                .post-detail
+                .post-comment
+                .form-control {
+                height: 30px;
+                border: 1px solid #ccc;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                margin: 7px 0;
+                min-width: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="post-content">
+            <img
+                src="images/post-images/1.jpg"
+                alt="post-image"
+                class="img-responsive post-image"
+            />
+            <div class="post-container">
+                <img
+                    src="images/users/user-5.jpg"
+                    alt="user"
+                    class="profile-photo-md pull-left"
+                />
+                <div class="post-detail">
+                    <div class="user-info">
+                        <h5>
+                            <a href="timeline.html" class="profile-link"
+                                >Alexis Clark</a
+                            >
+                            <span class="following">following</span>
+                        </h5>
+                        <p class="text-muted">
+                            Published a photo about 3 mins ago
+                        </p>
+                    </div>
+                    <div class="reaction">
+                        <a class="btn text-green"
+                            ><i class="icon ion-thumbsup"></i> 13</a
+                        >
+                        <a class="btn text-red"
+                            ><i class="fa fa-thumbs-down"></i> 0</a
+                        >
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore
+                            eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia
+                            deserunt mollit anim id est laborum.
+                            <i class="em em-anguished"></i>
+                            <i class="em em-anguished"></i>
+                            <i class="em em-anguished"></i>
+                        </p>
+                    </div>
+                    <div class="line-divider"></div>
+                    <div class="post-comment">
+                        <img
+                            src="images/users/user-11.jpg"
+                            alt=""
+                            class="profile-photo-sm"
+                        />
+                        <p>
+                            <a href="timeline.html" class="profile-link"
+                                >Diana </a
+                            ><i class="em em-laughing"></i> Lorem ipsum dolor
+                            sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam, quis nostrud
+                        </p>
+                    </div>
+                    <div class="post-comment">
+                        <img
+                            src="images/users/user-4.jpg"
+                            alt=""
+                            class="profile-photo-sm"
+                        />
+                        <p>
+                            <a href="timeline.html" class="profile-link"
+                                >John</a
+                            >
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud
+                        </p>
+                    </div>
+                    <div class="post-comment">
+                        <img
+                            src="images/users/user-1.jpg"
+                            alt=""
+                            class="profile-photo-sm"
+                        />
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Post a comment"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

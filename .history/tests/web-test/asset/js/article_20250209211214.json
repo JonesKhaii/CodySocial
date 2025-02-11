@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Tầm quan trọng của việc kiểm tra sức khỏe định kỳ",
+        "category": "Sức khỏe tổng quát",
+        "content": "Kiểm tra sức khỏe định kỳ giúp phát hiện sớm bệnh lý và nâng cao chất lượng cuộc sống.",
+        "author": "Bác sĩ Nguyễn Văn A",
+        "published_date": "2024-02-05"
+    },
+    {
+        "id": 2,
+        "title": "Cách phòng tránh bệnh tim mạch hiệu quả",
+        "category": "Tim mạch",
+        "content": "Duy trì lối sống lành mạnh, ăn uống hợp lý và tập thể dục giúp giảm nguy cơ mắc bệnh tim.",
+        "author": "Bác sĩ Trần Thị B",
+        "published_date": "2024-02-07"
+    },
+    {
+        "id": 3,
+        "title": "Dinh dưỡng hợp lý cho người bị tiểu đường",
+        "category": "Dinh dưỡng",
+        "content": "Người bị tiểu đường nên ăn nhiều rau xanh, hạn chế đường và chất béo để kiểm soát đường huyết.",
+        "author": "Chuyên gia dinh dưỡng Lê C",
+        "published_date": "2024-02-08"
+    }
+]

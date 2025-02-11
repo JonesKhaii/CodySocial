@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mạng xã hội y tế</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+        />
+        <style>
+            body {
+                background-color: #f8f9fa;
+            }
+            .sidebar {
+                background: linear-gradient(135deg, #2c2c2c, #3e3e3e);
+                color: white;
+                height: 100vh;
+                padding: 20px;
+            }
+            .sidebar img {
+                width: 80px;
+                height: 80px;
+            }
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+            .sidebar ul li {
+                padding: 10px;
+                font-size: 1.1em;
+            }
+            .activity-box {
+                background: white;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .right-sidebar {
+                background: #fdfdfd;
+                padding: 20px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Sidebar -->
+                <aside class="col-md-3 sidebar text-center">
+                    <img
+                        src="https://via.placeholder.com/80"
+                        class="rounded-circle mb-3"
+                        alt="User Avatar"
+                    />
+                    <h5>Success</h5>
+                    <p>Member</p>
+                    <ul>
+                        <li><i class="bi bi-house-door"></i> Activity</li>
+                        <li><i class="bi bi-images"></i> Photos</li>
+                        <li><i class="bi bi-people"></i> Groups</li>
+                    </ul>
+                </aside>
+
+                <!-- Main Content -->
+                <main class="col-md-6 py-4">
+                    <div class="activity-box mb-3">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="What's new, Success?"
+                        />
+                    </div>
+                    <nav>
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"
+                                    >All Members
+                                    <span class="badge bg-primary">1</span></a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">My Groups</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Mentions</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="activity-box mt-3">
+                        <div class="d-flex align-items-center">
+                            <img
+                                src="https://via.placeholder.com/40"
+                                class="rounded-circle me-2"
+                                alt="User"
+                            />
+                            <h6 class="mb-0">Success posted an update</h6>
+                        </div>
+                        <small class="text-muted">11 hours ago</small>
+                        <div class="mt-2">
+                            <img
+                                src="https://via.placeholder.com/500x300"
+                                class="img-fluid rounded"
+                            />
+                        </div>
+                    </div>
+                </main>
+
+                <!-- Right Sidebar -->
+                <aside class="col-md-3 right-sidebar">
+                    <h6>Members</h6>
+                    <ul class="list-unstyled">
+                        <li>
+                            <img
+                                src="https://via.placeholder.com/30"
+                                class="rounded-circle me-2"
+                            />
+                            Sephiroth
+                        </li>
+                        <li>
+                            <img
+                                src="https://via.placeholder.com/30"
+                                class="rounded-circle me-2"
+                            />
+                            Linda Lohan
+                        </li>
+                    </ul>
+                    <h6 class="mt-4">Hashtags</h6>
+                    <span class="badge bg-secondary">#beehive</span>
+                    <span class="badge bg-secondary">#social</span>
+                </aside>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

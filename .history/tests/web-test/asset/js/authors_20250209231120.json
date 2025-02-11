@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Bác sĩ Nguyễn Văn A",
+        "field": "Chuyên gia Tim mạch",
+        "image": "asset/images/authors/author1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Bác sĩ Trần Thị B",
+        "field": "Chuyên gia Dinh dưỡng",
+        "image": "asset/images/authors/author2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Bác sĩ Lê Hồng C",
+        "field": "Bác sĩ Nội khoa",
+        "image": "asset/images/authors/author3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Giáo sư Phạm Văn D",
+        "field": "Nghiên cứu Y tế",
+        "image": "asset/images/authors/author4.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Tiến sĩ Hoàng Minh E",
+        "field": "Chuyên gia Bệnh truyền nhiễm",
+        "image": "asset/images/authors/author5.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Bác sĩ Lê Văn F",
+        "field": "Chăm sóc người cao tuổi",
+        "image": "asset/images/authors/author6.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Bác sĩ Nguyễn Thị G",
+        "field": "Chuyên gia Sức khỏe phụ nữ",
+        "image": "asset/images/authors/author7.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Bác sĩ Phan Quốc H",
+        "field": "Chuyên gia Sức khỏe nam giới",
+        "image": "asset/images/authors/author8.jpg"
+    }
+]

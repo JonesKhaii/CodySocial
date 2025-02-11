@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cody Community</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+            .container {
+                width: 80%;
+                margin: auto;
+                background: white;
+                padding: 20px;
+            }
+            .header {
+                display: flex;
+                align-items: center;
+                padding: 10px 20px;
+                background: #fff;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+                color: #007bff;
+                margin-right: auto;
+            }
+            .nav a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: #333;
+            }
+            .content {
+                display: flex;
+                margin-top: 20px;
+            }
+            .sidebar,
+            .rightbar {
+                width: 20%;
+                background: white;
+                padding: 15px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            .main {
+                flex: 1;
+                margin: 0 20px;
+            }
+            .post {
+                background: white;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin-bottom: 15px;
+            }
+            .post h3 {
+                margin: 0;
+                font-size: 18px;
+            }
+            .reaction {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+            .button {
+                padding: 8px 12px;
+                background: #007bff;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+            .comment {
+                margin-top: 10px;
+                padding: 10px;
+                background: #f9f9f9;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">Cody Community</div>
+            <div class="nav">
+                <a href="#">Home</a>
+                <a href="#">Doctors</a>
+                <a href="#">Q&A</a>
+                <a href="#">Appointment</a>
+                <a href="#">Articles</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="sidebar">
+                    <h4>Chuyên mục phổ biến</h4>
+                    <ul>
+                        <li>Da liễu</li>
+                        <li>Tim mạch</li>
+                        <li>Sức khỏe người cao tuổi</li>
+                        <li>Đường huyết</li>
+                    </ul>
+                </div>
+                <div class="main">
+                    <div class="post">
+                        <h3>Dương Khải</h3>
+                        <p>
+                            <strong
+                                >Tại sao chúng ta cần phải uống đủ 2 lít nước
+                                mỗi ngày?</strong
+                            >
+                        </p>
+                        <p>
+                            Cơ thể con người có đến 70% là nước... hãy xem qua
+                            những lợi ích nhé.
+                        </p>
+                        <div class="reaction">
+                            <span>👍 12 👎 2</span>
+                        </div>
+                        <div class="comment">
+                            <strong>Phương Tuấn</strong>
+                            <p>
+                                Quá tuyệt vời bác sĩ. Nhưng nếu uống nhiều thì
+                                có hại không ạ?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightbar">
+                    <h4>Bác sĩ hàng đầu</h4>
+                    <p>Bác sĩ Dương Khải</p>
+                    <button class="button">Xem hồ sơ</button>
+                    <p>Bác sĩ Phương Tuấn</p>
+                    <button class="button">Xem hồ sơ</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

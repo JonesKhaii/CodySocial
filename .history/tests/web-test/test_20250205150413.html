@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Community Health Forum</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f9f9f9;
+            }
+
+            .container {
+                width: 80%;
+                margin: auto;
+                padding: 20px;
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                background-color: #f8f8f8;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+                color: #007bff;
+                margin-right: auto;
+            }
+
+            .nav a {
+                margin: 0 15px;
+                text-decoration: none;
+                color: #333;
+            }
+
+            .content {
+                display: flex;
+                margin-top: 20px;
+            }
+
+            .sidebar {
+                width: 20%;
+                padding: 15px;
+                background: white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .main {
+                flex: 1;
+                margin: 0 20px;
+            }
+
+            .question {
+                background-color: white;
+                padding: 15px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .question h3 {
+                margin-top: 0;
+                font-size: 18px;
+            }
+
+            .question-meta {
+                font-size: 14px;
+                color: #777;
+            }
+
+            .question-body {
+                margin-top: 10px;
+            }
+
+            .question-footer {
+                margin-top: 15px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .vote-buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .vote-buttons button {
+                padding: 8px;
+                margin: 5px;
+                background-color: #f0f0f0;
+                border: 1px solid #ccc;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+
+            .answers {
+                background-color: white;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin-top: 20px;
+            }
+
+            .answer {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #f9f9f9;
+                border-radius: 5px;
+            }
+
+            .answer .answer-meta {
+                font-size: 12px;
+                color: #777;
+            }
+
+            .answer .answer-body {
+                margin-top: 10px;
+            }
+
+            .answer-footer {
+                margin-top: 15px;
+                text-align: right;
+            }
+
+            .comment-section {
+                margin-top: 20px;
+            }
+
+            .comment-section input {
+                width: 100%;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+            }
+
+            .comment-section button {
+                padding: 10px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo">Community Health Forum</div>
+            <div class="nav">
+                <a href="#">Home</a>
+                <a href="#">Doctors</a>
+                <a href="#">Q&A</a>
+                <a href="#">Appointments</a>
+                <a href="#">Articles</a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                <div class="sidebar">
+                    <h4>Popular Categories</h4>
+                    <ul>
+                        <li>Dermatology</li>
+                        <li>Cardiology</li>
+                        <li>Senior Health</li>
+                        <li>Diabetes</li>
+                    </ul>
+                </div>
+                <div class="main">
+                    <div class="question">
+                        <h3>
+                            Why do we need to drink 2 liters of water a day?
+                        </h3>
+                        <div class="question-meta">
+                            Asked by <strong>Dương Khải</strong> on 05/02/2025
+                        </div>
+                        <div class="question-body">
+                            Drinking water is vital for the body... but how much
+                            is really necessary? Here's why 2 liters is a good
+                            recommendation.
+                        </div>
+                        <div class="question-footer">
+                            <div class="vote-buttons">
+                                <button>👍 12</button>
+                                <button>👎 2</button>
+                            </div>
+                            <div class="question-actions">
+                                <button>Answer</button>
+                                <button>Share</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="answers">
+                        <h4>Answers</h4>
+                        <div class="answer">
+                            <div class="answer-meta">
+                                Answered by <strong>Phương Tuấn</strong> on
+                                06/02/2025
+                            </div>
+                            <div class="answer-body">
+                                It’s essential to stay hydrated, but consuming
+                                too much water may lead to problems. Aim for
+                                balance!
+                            </div>
+                            <div class="answer-footer">
+                                <button>Upvote</button>
+                                <button>Downvote</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comment-section">
+                        <h4>Comment on this Answer</h4>
+                        <input type="text" placeholder="Add a comment..." />
+                        <button>Submit Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

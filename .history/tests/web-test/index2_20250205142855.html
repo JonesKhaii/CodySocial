@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Health Community | Home</title>
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        />
+        <style>
+            body {
+                background-color: #f4f4f4;
+            }
+            .navbar-brand {
+                font-weight: bold;
+                color: #28a745;
+            }
+            body {
+                background-color: #f4f4f4;
+                font-family: Arial, sans-serif;
+            }
+            .navbar-brand {
+                font-weight: bold;
+                color: #1877f2;
+            }
+            .post {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+            }
+            .post-header,
+            .comment-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .post-header-left,
+            .comment-header-left {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .post-header-left img,
+            .comment-header-left img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+            .post-header-right,
+            .comment-header-right {
+                display: flex;
+                gap: 10px;
+            }
+            .post-content {
+                margin-top: 10px;
+                line-height: 1.5;
+            }
+            .actions {
+                display: flex;
+                gap: 15px;
+                margin-top: 10px;
+                align-items: center;
+            }
+            .actions button {
+                border: none;
+                background: none;
+                cursor: pointer;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            .like {
+                background-color: #fff;
+                border: none;
+                color: green;
+            }
+            .dislike {
+                background-color: #fff;
+                border: none;
+                color: red;
+            }
+            .comment-section {
+                margin-top: 15px;
+                margin-left: 40px;
+                padding-top: 10px;
+                border-top: 1px solid #ddd;
+            }
+            .comment {
+                margin-top: 10px;
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ddd;
+            }
+            .comment-input {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            /* Style for the floating chat box */
+            .chat-box {
+                position: fixed;
+                bottom: 0;
+                right: 0;
+                width: 300px;
+                z-index: 1050;
+                display: none;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+                border-radius: 10px 10px 0 0;
+            }
+            .chat-box.open {
+                display: block;
+            }
+            .chat-header {
+                background-color: #28a745;
+                color: white;
+                padding: 10px;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            .chat-body {
+                height: 200px;
+                overflow-y: auto;
+                padding: 10px;
+            }
+            .chat-footer {
+                padding: 10px;
+                background-color: #f8f9fa;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+            .btn-close-white {
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.2rem;
+            }
+            /* Right sidebarsidebar */
+            .navbar-brand {
+                font-weight: bold;
+                color: #1877f2;
+            }
+            .sidebar-card {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+            }
+            .sidebar-card h5 {
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            .doctor-card {
+                display: flex;
+                align-items: center;
+                background: #f8f9fa;
+                padding: 12px;
+                border-radius: 8px;
+                margin-bottom: 12px;
+                border: 1px solid #ddd;
+                transition: all 0.3s ease-in-out;
+            }
+            .doctor-card:hover {
+                transform: scale(1.03);
+                box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+            }
+            .doctor-card img {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                margin-right: 12px;
+            }
+            .doctor-info {
+                flex-grow: 1;
+            }
+            .doctor-card .btn {
+                font-size: 14px;
+                padding: 6px 10px;
+            }
+            .upcoming-appointments {
+                text-align: center;
+                font-size: 14px;
+                color: #555;
+            }
+
+            .post-content {
+                background: #f8f8f8;
+                border-radius: 4px;
+                width: 100%;
+                border: 1px solid #f1f2f2;
+                margin-bottom: 20px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .post-content img.post-image,
+            video.post-video,
+            .google-maps {
+                width: 100%;
+                height: auto;
+            }
+
+            .post-content .google-maps .map {
+                height: 300px;
+            }
+
+            .post-content .post-container {
+                padding: 20px;
+            }
+
+            .post-content .post-container .post-detail {
+                margin-left: 65px;
+                position: relative;
+            }
+
+            .post-content .post-container .post-detail .post-text {
+                line-height: 24px;
+                margin: 0;
+            }
+
+            .post-content .post-container .post-detail .reaction {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .post-content .post-container .post-detail .post-comment {
+                display: inline-flex;
+                margin: 10px auto;
+                width: 100%;
+            }
+
+            .post-content
+                .post-container
+                .post-detail
+                .post-comment
+                img.profile-photo-sm {
+                margin-right: 10px;
+            }
+
+            .post-content
+                .post-container
+                .post-detail
+                .post-comment
+                .form-control {
+                height: 30px;
+                border: 1px solid #ccc;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                margin: 7px 0;
+                min-width: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <header
+            class="navbar navbar-expand-lg navbar-light bg-primary shadow-sm"
+        >
+            <div class="container">
+                <a class="navbar-brand text-white" href="#">Health Connect</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <form class="d-flex me-auto ms-3">
+                        <input
+                            class="form-control me-2"
+                            type="search"
+                            placeholder="Tìm kiếm bác sĩ, bài viết..."
+                            aria-label="Search"
+                        />
+                        <button class="btn btn-light" type="submit">
+                            Tìm kiếm
+                        </button>
+                    </form>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#"
+                                >Trang Chủ</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="doctors.html"
+                                >Bác Sĩ</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Hỏi Đáp</a>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link text-white"
+                                href="appointment.html"
+                                >Lịch Khám</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Bài Viết</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Hồ Sơ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Left Sidebar -->
+                <div class="col-md-3">
+                    <div
+                        class="post-box text-center"
+                        style="
+                            background: linear-gradient(
+                                to bottom,
+                                #1e90ff,
+                                #87ceeb
+                            );
+                            color: white;
+                            padding: 20px;
+                            border-radius: 8px;
+                        "
+                    >
+                        <img
+                            src="https://via.placeholder.com/80"
+                            class="img-fluid rounded-circle mb-2 border border-light"
+                        />
+                        <h5>DKhai</h5>
+                        <p>
+                            <i class="fas fa-user-friends"></i> 1,299 followers
+                        </p>
+                    </div>
+                    <div class="post-box">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-newspaper text-success"></i>
+                                <a href="#" class="text-dark">My Newsfeed</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-users text-primary"></i>
+                                <a href="#" class="text-dark">People Nearby</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-friends text-danger"></i>
+                                <a href="#" class="text-dark">Friends</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-comments text-warning"></i>
+                                <a href="#" class="text-dark">Messages</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-images text-info"></i>
+                                <a href="#" class="text-dark">Images</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-video text-danger"></i>
+                                <a href="#" class="text-dark">Videos</a>
+                            </li>
+                        </ul>
+                        <button class="btn btn-success w-100" id="openChatBtn">
+                            Chat online
+                        </button>
+                    </div>
+                    <div class="post-box">
+                        <h5>Popular Health Topics</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Heart Disease</a></li>
+                            <li><a href="#">Mental Health</a></li>
+                            <li><a href="#">Diabetes Management</a></li>
+                            <li><a href="#">Nutrition</a></li>
+                            <li><a href="#">Exercise & Fitness</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Main Feed -->
+                <div class="col-md-6">
+                    <div class="post-box">
+                        <h5>Share Your Health Tips</h5>
+                        <textarea
+                            class="form-control"
+                            placeholder="Write something..."
+                            rows="3"
+                        ></textarea>
+                        <div class="mt-2">
+                            <input
+                                type="file"
+                                class="form-control mb-2"
+                                accept="image/*,video/*"
+                            />
+                        </div>
+                        <button class="btn btn-success mt-2 w-100">Post</button>
+                    </div>
+
+                    <!-- Example Post -->
+                    <div class="post-content">
+                        <img
+                            src="images/post-images/1.jpg"
+                            alt="post-image"
+                            class="img-responsive post-image"
+                        />
+                        <div class="post-container">
+                            <img
+                                src="images/users/user-5.jpg"
+                                alt="user"
+                                class="profile-photo-md pull-left"
+                            />
+                            <div class="post-detail">
+                                <div class="user-info">
+                                    <h5>
+                                        <a
+                                            href="timeline.html"
+                                            class="profile-link"
+                                            >Alexis Clark</a
+                                        >
+                                        <span class="following">following</span>
+                                    </h5>
+                                    <p class="text-muted">
+                                        Published a photo about 3 mins ago
+                                    </p>
+                                </div>
+                                <div class="reaction">
+                                    <a class="btn text-green"
+                                        ><i class="icon ion-thumbsup"></i> 13</a
+                                    >
+                                    <a class="btn text-red"
+                                        ><i class="fa fa-thumbs-down"></i> 0</a
+                                    >
+                                </div>
+                                <div class="line-divider"></div>
+                                <div class="post-text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna
+                                        aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris
+                                        nisi ut aliquip ex ea commodo consequat.
+                                        Duis aute irure dolor in reprehenderit
+                                        in voluptate velit esse cillum dolore eu
+                                        fugiat nulla pariatur. Excepteur sint
+                                        occaecat cupidatat non proident, sunt in
+                                        culpa qui officia deserunt mollit anim
+                                        id est laborum.
+                                        <i class="em em-anguished"></i>
+                                        <i class="em em-anguished"></i>
+                                        <i class="em em-anguished"></i>
+                                    </p>
+                                </div>
+                                <div class="line-divider"></div>
+                                <div class="post-comment">
+                                    <img
+                                        src="images/users/user-11.jpg"
+                                        alt=""
+                                        class="profile-photo-sm"
+                                    />
+                                    <p>
+                                        <a
+                                            href="timeline.html"
+                                            class="profile-link"
+                                            >Diana </a
+                                        ><i class="em em-laughing"></i> Lorem
+                                        ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna
+                                        aliqua. Ut enim ad minim veniam, quis
+                                        nostrud
+                                    </p>
+                                </div>
+                                <div class="post-comment">
+                                    <img
+                                        src="images/users/user-4.jpg"
+                                        alt=""
+                                        class="profile-photo-sm"
+                                    />
+                                    <p>
+                                        <a
+                                            href="timeline.html"
+                                            class="profile-link"
+                                            >John</a
+                                        >
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna
+                                        aliqua. Ut enim ad minim veniam, quis
+                                        nostrud
+                                    </p>
+                                </div>
+                                <div class="post-comment">
+                                    <img
+                                        src="images/users/user-1.jpg"
+                                        alt=""
+                                        class="profile-photo-sm"
+                                    />
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="Post a comment"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar -->
+                <div class="col-md-3 static">
+                    <div class="suggestions" id="sticky-sidebar">
+                        <h4 class="grey text-center">Bác sĩ hàng đầu</h4>
+
+                        <div class="follow-user card p-3 mb-3 shadow rounded">
+                            <div class="d-flex align-items-center">
+                                <img
+                                    src="https://via.placeholder.com/60"
+                                    alt=""
+                                    class="profile-photo-md rounded-circle"
+                                />
+                                <div class="ms-3">
+                                    <h5 class="mb-1">
+                                        <a href="#" class="text-primary"
+                                            >Bác sĩ Dương Khải</a
+                                        >
+                                    </h5>
+                                    <p class="small text-muted">
+                                        Chuyên khoa Tim mạch
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="btn btn-sm btn-outline-success"
+                                        >Xem hồ sơ</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="follow-user card p-3 mb-3 shadow rounded">
+                            <div class="d-flex align-items-center">
+                                <img
+                                    src="https://via.placeholder.com/60"
+                                    alt=""
+                                    class="profile-photo-md rounded-circle"
+                                />
+                                <div class="ms-3">
+                                    <h5 class="mb-1">
+                                        <a href="#" class="text-primary"
+                                            >Bác sĩ James Lee</a
+                                        >
+                                    </h5>
+                                    <p class="small text-muted">
+                                        Chuyên khoa Nội tiết
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="btn btn-sm btn-outline-success"
+                                        >Xem hồ sơ</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="follow-user card p-3 mb-3 shadow rounded">
+                            <div class="d-flex align-items-center">
+                                <img
+                                    src="https://via.placeholder.com/60"
+                                    alt=""
+                                    class="profile-photo-md rounded-circle"
+                                />
+                                <div class="ms-3">
+                                    <h5 class="mb-1">
+                                        <a href="#" class="text-primary"
+                                            >Bác sĩ Anna Nguyen</a
+                                        >
+                                    </h5>
+                                    <p class="small text-muted">
+                                        Chuyên khoa Da liễu
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="btn btn-sm btn-outline-success"
+                                        >Xem hồ sơ</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="follow-user card p-3 mb-3 shadow rounded">
+                            <div class="d-flex align-items-center">
+                                <img
+                                    src="https://via.placeholder.com/60"
+                                    alt=""
+                                    class="profile-photo-md rounded-circle"
+                                />
+                                <div class="ms-3">
+                                    <h5 class="mb-1">
+                                        <a href="#" class="text-primary"
+                                            >Bác sĩ Emily Carter</a
+                                        >
+                                    </h5>
+                                    <p class="small text-muted">
+                                        Chuyên khoa Thần kinh
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="btn btn-sm btn-outline-success"
+                                        >Xem hồ sơ</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="follow-user card p-3 mb-3 shadow rounded">
+                            <div class="d-flex align-items-center">
+                                <img
+                                    src="https://via.placeholder.com/60"
+                                    alt=""
+                                    class="profile-photo-md rounded-circle"
+                                />
+                                <div class="ms-3">
+                                    <h5 class="mb-1">
+                                        <a href="#" class="text-primary"
+                                            >Bác sĩ Sophia Page</a
+                                        >
+                                    </h5>
+                                    <p class="small text-muted">
+                                        Chuyên khoa Phụ sản
+                                    </p>
+                                    <a
+                                        href="#"
+                                        class="btn btn-sm btn-outline-success"
+                                        >Xem hồ sơ</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-light text-center p-3 mt-4">
+            <p>&copy; 2025 Health Community. All Rights Reserved.</p>
+        </footer>
+
+        <!-- Chat Box -->
+        <div id="chatBox" class="chat-box">
+            <div class="card">
+                <div class="card-header chat-header">
+                    Chat Box
+                    <button
+                        type="button"
+                        class="btn-close btn-close-white float-end"
+                        id="closeChatBtn"
+                    ></button>
+                </div>
+                <div class="card-body chat-body">
+                    <p>
+                        <strong>Dr. James:</strong> Hello, how can I help you?
+                    </p>
+                </div>
+                <div class="card-footer chat-footer">
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Type a message..."
+                    />
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Open Chat Box
+            document
+                .getElementById("openChatBtn")
+                .addEventListener("click", function () {
+                    document.getElementById("chatBox").classList.add("open");
+                });
+
+            // Close Chat Box
+            document
+                .getElementById("closeChatBtn")
+                .addEventListener("click", function () {
+                    document.getElementById("chatBox").classList.remove("open");
+                });
+        </script>
+    </body>
+</html>
