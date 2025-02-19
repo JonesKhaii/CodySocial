@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(45deg, #4776e6, #8e54e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.container-login {
+    background: white;
+    padding: 2rem;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.container-login h2 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    position: relative;
+}
+
+.container-login h2::before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
+.input-group input:focus {
+    border-color: #8e54e9;
+    box-shadow: 0 0 8px rgba(142, 84, 233, 0.4);
+}
+
+.btn-login {
+    margin-top: 1rem;
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(to left, #4776e6, #8e54e9);
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+}
+
+.btn-login:hover {
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #4776e6, #8e54e9);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.remember-forgot a {
+    color: #8e54e9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.footer-text a {
+    font-weight: bold;
+    color: #8e54e9;
+    text-decoration: none;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Hiệu ứng Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

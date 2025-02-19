@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+            name="viewport"
+        />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Dashboard</title>
+
+        <!-- Link các file CSS cần thiết -->
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="{{ asset('path/to/material-dashboard.min.css') }}"
+        />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div
+                class="sidebar"
+                data-color="purple"
+                data-background-color="white"
+                data-image="path/to/sidebar-1.jpg"
+            >
+                <div class="logo">
+                    <a href="#" class="simple-text logo-normal"> Tubagora </a>
+                </div>
+                <div class="sidebar-wrapper">
+                    <ul class="nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#infoPersonal">
+                                <i class="material-icons">person</i>
+                                <p>Thông tin cá nhân</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#posts">
+                                <i class="material-icons">library_books</i>
+                                <p>Bài viết</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">
+                                <i class="material-icons">shopping_cart</i>
+                                <p>Sản phẩm tiếp thị</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#income">
+                                <i class="material-icons">monetization_on</i>
+                                <p>Thu nhập</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reports">
+                                <i class="material-icons">assessment</i>
+                                <p>Thống kê báo cáo</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main-panel">
+                <nav
+                    class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top"
+                >
+                    <div class="container-fluid">
+                        <div class="navbar-wrapper">
+                            <a class="navbar-brand" href="#">Dashboard</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div
+                                        class="card-header card-header-tabs card-header-primary"
+                                    >
+                                        <div class="nav-tabs-navigation">
+                                            <div class="nav-tabs-wrapper">
+                                                <span class="nav-tabs-title"
+                                                    >Thông tin:</span
+                                                >
+                                                <ul
+                                                    class="nav nav-tabs"
+                                                    data-tabs="tabs"
+                                                >
+                                                    <li class="nav-item">
+                                                        <a
+                                                            class="nav-link active"
+                                                            href="#infoPersonalTab"
+                                                            data-toggle="tab"
+                                                        >
+                                                            <i
+                                                                class="material-icons"
+                                                                >person</i
+                                                            >
+                                                            Thông tin cá nhân
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a
+                                                            class="nav-link"
+                                                            href="#postsTab"
+                                                            data-toggle="tab"
+                                                        >
+                                                            <i
+                                                                class="material-icons"
+                                                                >library_books</i
+                                                            >
+                                                            Bài viết
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a
+                                                            class="nav-link"
+                                                            href="#productsTab"
+                                                            data-toggle="tab"
+                                                        >
+                                                            <i
+                                                                class="material-icons"
+                                                                >shopping_cart</i
+                                                            >
+                                                            Sản phẩm tiếp thị
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a
+                                                            class="nav-link"
+                                                            href="#incomeTab"
+                                                            data-toggle="tab"
+                                                        >
+                                                            <i
+                                                                class="material-icons"
+                                                                >monetization_on</i
+                                                            >
+                                                            Thu nhập
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a
+                                                            class="nav-link"
+                                                            href="#reportsTab"
+                                                            data-toggle="tab"
+                                                        >
+                                                            <i
+                                                                class="material-icons"
+                                                                >assessment</i
+                                                            >
+                                                            Thống kê báo cáo
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                            <!-- Thông tin cá nhân -->
+                                            <div
+                                                class="tab-pane active"
+                                                id="infoPersonalTab"
+                                            >
+                                                <h4>
+                                                    Thông tin cá nhân bác sĩ
+                                                </h4>
+                                                <p>
+                                                    Thông tin chi tiết về bác
+                                                    sĩ...
+                                                </p>
+                                            </div>
+
+                                            <!-- Bài viết -->
+                                            <div class="tab-pane" id="postsTab">
+                                                <h4>Bài viết của bác sĩ</h4>
+                                                <p>
+                                                    Danh sách bài viết của bác
+                                                    sĩ...
+                                                </p>
+                                            </div>
+
+                                            <!-- Sản phẩm tiếp thị -->
+                                            <div
+                                                class="tab-pane"
+                                                id="productsTab"
+                                            >
+                                                <h4>Sản phẩm tiếp thị</h4>
+                                                <p>
+                                                    Danh sách các sản phẩm tiếp
+                                                    thị mà bác sĩ đang tham
+                                                    gia...
+                                                </p>
+                                            </div>
+
+                                            <!-- Thu nhập -->
+                                            <div
+                                                class="tab-pane"
+                                                id="incomeTab"
+                                            >
+                                                <h4>Thu nhập của bác sĩ</h4>
+                                                <p>
+                                                    Thông tin về thu nhập hàng
+                                                    tháng...
+                                                </p>
+                                            </div>
+
+                                            <!-- Thống kê báo cáo -->
+                                            <div
+                                                class="tab-pane"
+                                                id="reportsTab"
+                                            >
+                                                <h4>Thống kê báo cáo</h4>
+                                                <p>
+                                                    Báo cáo và thống kê về hiệu
+                                                    quả công việc của bác sĩ...
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <nav class="pull-left">
+                            <ul>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Licenses</a></li>
+                            </ul>
+                        </nav>
+                        <div class="copyright pull-right">
+                            © 2023, made with love by Your Company
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Core JS Files -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('path/to/material-dashboard.min.js') }}"></script>
+    </body>
+</html>

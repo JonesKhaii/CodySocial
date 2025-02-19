@@ -1,0 +1,62 @@
+/* Navbar Styling */
+header > .navbar {
+    padding: 10px 0;
+    border-top: 10px solid #747474;
+    border-bottom: 10px solid #747474;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Chỉnh sửa container để logo và navbar nằm cùng dòng */
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo container */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar collapse - Điều chỉnh để navbar nằm bên phải */
+.navbar-collapse {
+    display: flex !important;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+/* Navbar links */
+.navbar-nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* Đảm bảo các liên kết trong navbar được căn chỉnh hợp lý */
+.navbar-nav .nav-item {
+    margin-left: 15px;
+}
+
+/* Chỉnh sửa responsive khi màn hình nhỏ */
+@media (max-width: 992px) {
+    .container-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-nav {
+        text-align: center;
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+    .navbar-toggler {
+        display: block;
+    }
+}

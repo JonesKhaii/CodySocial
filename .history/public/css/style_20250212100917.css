@@ -1,0 +1,13 @@
+.btn-primary {
+    background-color: #2377b3 !important;
+}
+header.bg-primary {
+    background-color: #2377b3 !important;
+}
+.navbar-toggler {
+    border-color: #fff; /* Đổi màu viền thành trắng */
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); /* Đảo màu từ đen sang trắng */
+}

@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Doctor;
+use App\Models\Post;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\PostCategory;
+// class DoctorController extends Controller
+// {
+//     public function profile()
+//     {
+//         $doctor = Auth::user();
+//         if (!$doctor || $doctor->role != 'doctor') {
+//             return redirect()->route('login'); // Nếu không phải bác sĩ, chuyển hướng đến trang đăng nhập
+//         }
+
+
+//         return view('doctor.profile', compact('doctor'));
+//     }
+// }
+
+
+class DoctorController extends Controller
+{
+    public function profile()
+    {
+        $doctor = Auth::guard('doctor')->user(); // Sử dụng guard doctor để lấy thông tin bác sĩ
+        if (!$doctor) {
+            return redirect()->route('login'); // Nếu không phải bác sĩ, chuyển hướng về trang đăng nhập
+        }
+        // dd($doctor);
+        $posts = Post::where('added_by', $doctor->id)->get();
+
+        if (session('role') != 'doctor') {
+            return redirect()->route('login');  // Nếu không phải bác sĩ, điều hướng về trang đăng nhập
+        }
+
+        $categories = PostCategory::where('status', 'active')->get();
+
+        return view('doctor.profile', compact('doctor', 'posts', 'categories'));
+    }
+    public function update(Request $request, $id)
+    {
+        $doctor = Doctor::findOrFail($id);
+        $doctor->update($request->only(['name', 'phone', 'email', 'workplace']));
+
+        return redirect()->back()->with('success', 'Thông tin đã được cập nhật.');
+    }
+}

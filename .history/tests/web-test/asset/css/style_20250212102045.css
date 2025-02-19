@@ -1,0 +1,27 @@
+/*Header*/
+header > .navbar {
+    padding: 0px;
+    border-top: 10px solid #747474;
+    border-bottom: 10px solid #747474;
+}
+
+.Header {
+    background-color: #747474;
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbarSupportedContent {
+    flex-grow: 0;
+}
+
+.navbar-toggler {
+    margin-right: 12px;
+    float: right;
+}
+header .navbar-brand {
+    font-weight: 700;
+    margin-left: 12px;
+    width: 40px;
+}
+/*End Header*/
