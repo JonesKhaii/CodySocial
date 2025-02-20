@@ -139,38 +139,6 @@
         </div>
     </div>
     <script src="{{ asset('asset/js/main.js') }}"></script>
-    <script>
-        const searchInput = document.getElementById("searchInput");
-        const searchResults = document.getElementById("searchResults");
-
-        searchInput.addEventListener("keyup", function() {
-            let query = this.value.trim();
-
-            if (query.length > 0) {
-                fetch(`/search/posts?query=${query}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        let html = "";
-                        if (data.length > 0) {
-                            data.forEach(post => {
-                                html += `<div class="card p-3 mb-2">
-                                        <a href="/posts/${post.slug}" class="text-dark">
-                                            <h5>${post.title}</h5>
-                                            <p class="text-muted">${post.summary}</p>
-                                        </a>
-                                    </div>`;
-                            });
-                        } else {
-                            html = `<p class="text-muted">Không tìm thấy bài viết nào.</p>`;
-                        }
-                        searchResults.innerHTML = html;
-                    })
-                    .catch(error => console.error("Lỗi tìm kiếm:", error));
-            } else {
-                searchResults.innerHTML = "";
-            }
-        });
-    </script>
 @endsection
 
 <style>

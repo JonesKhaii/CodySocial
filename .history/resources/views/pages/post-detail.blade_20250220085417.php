@@ -185,7 +185,7 @@
                         </div>
                     </div>
                 </div>
-
+                {{-- </div> --}}
 
                 <!-- Sidebar -->
                 <div class="col-lg-4 col-12">

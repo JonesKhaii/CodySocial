@@ -50,42 +50,34 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $doctor = auth()->guard('doctor')->user();
-
-        if (!$doctor) {
-            return redirect()->back()->with('error', 'Bạn không có quyền đăng bài.');
-        }
-
         $request->validate([
-            'title' => 'required|string|max:255',
-            'summary' => 'required|string',
-            'description' => 'required|string',
-            'post_cat_id' => 'required|exists:post_categories,id',
-            'image' => 'required|image|mimes:webp,jpeg,png,jpg,gif|max:2048',
+            'comment' => 'required|string',
+            'post_id' => 'required|exists:posts,id',
+            'parent_id' => 'nullable|exists:comments,id'
         ]);
 
-        // Xử lý upload ảnh
-        if ($request->hasFile('image')) {
-            $imageUrl = app(ImageController::class)->uploadImage($request);
-        } else {
-            $imageUrl = null;
+        // Kiểm tra xem user đăng nhập từ đâu (user hoặc doctor)
+        $user = auth()->guard('web')->user(); // Lấy user từ guard web
+        $doctor = auth()->guard('doctor')->user(); // Lấy doctor từ guard doctor
+
+        // Nếu không có user hoặc doctor -> Chặn bình luận
+        if (!$user && !$doctor) {
+            return back()->with('error', 'Bạn cần đăng nhập để bình luận.');
         }
 
-        $post = new Post();
-        $post->title = $request->title;
-        $post->slug = Str::slug($request->title);
-        $post->summary = $request->summary;
-        $post->description = $request->description;
-        $post->post_cat_id = $request->post_cat_id;
-        $post->photo = $imageUrl;
-        $post->status = 'active';
-        $post->added_by = $doctor->id;
-        $post->save();
+        // Xác định ID của người bình luận (user hoặc doctor)
+        $commenterId = $user ? $user->id : $doctor->id;
 
-        // Load lại danh mục bài viết
-        $categories = PostCategory::where('status', 'active')->get();
+        Comment::create([
+            'user_id' => $commenterId, // Dùng chung cột user_id
+            'post_id' => $request->post_id,
+            'comment' => $request->comment,
+            'status' => 'active',
+            'parent_id' => $request->parent_id,
+            'replied_comment' => $request->parent_id ? $request->replied_comment : null
+        ]);
 
-        return redirect()->back()->with('success', 'Bài viết đã được tạo thành công!');
+        return back()->with('success', 'Bình luận của bạn đã được thêm.');
     }
 
     // public function show($slug)
@@ -149,27 +141,5 @@ class PostController extends Controller
 
         // Trả về thông báo thành công
         return redirect()->back()->with('success', 'Bài viết đã được cập nhật!');
-    }
-
-    public function search(Request $request)
-    {
-        $query = trim($request->query('query'));
-
-        // Nếu từ khóa quá ngắn, không cần truy vấn database
-        if (strlen($query) < 2) {
-            return response()->json([]);
-        }
-
-        // Tối ưu truy vấn tìm kiếm
-        $posts = \App\Models\Post::select('id', 'title', 'summary', 'slug')
-            ->where(function ($q) use ($query) {
-                $q->where('title', 'LIKE', "%{$query}%")
-                    ->orWhere('summary', 'LIKE', "%{$query}%");
-            })
-            ->orderByDesc('created_at')
-            ->limit(10) // Dùng limit thay vì take
-            ->get();
-
-        return response()->json($posts);
     }
 }

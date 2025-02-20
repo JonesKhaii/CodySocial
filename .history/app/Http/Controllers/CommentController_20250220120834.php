@@ -11,15 +11,17 @@ class CommentController extends Controller
 {
     public function store(Request $request)
     {
+        $request->validate([
+            'comment' => 'required|string',
+            'post_id' => 'required|exists:posts,id',
+            'parent_id' => 'nullable|exists:comments,id'
+        ]);
+
+        // Kiểm tra xem user đăng nhập từ đâu (user hoặc doctor)
         $user = auth()->guard('web')->user(); // Lấy user từ guard web
         $doctor = auth()->guard('doctor')->user(); // Lấy doctor từ guard doctor
 
-        // Debug log để kiểm tra Laravel có nhận diện đúng hay không
-        \Log::info("Session role: " . session('role'));
-        \Log::info("Guard web:", [$user]);
-        \Log::info("Guard doctor:", [$doctor]);
-
-        // Nếu cả user và doctor đều null, chặn bình luận
+        // Nếu không có user hoặc doctor -> Chặn bình luận
         if (!$user && !$doctor) {
             return back()->with('error', 'Bạn cần đăng nhập để bình luận.');
         }
